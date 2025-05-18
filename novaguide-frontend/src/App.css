@@ -1,0 +1,16 @@
+/* Import Bootstrap CSS */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+/* Style for list group items */
+.list-group-item{
+    background-color:#6dcefb; /* Set background color to a light blue */
+}
+
+/* Style for navbar links */
+.nav-link{
+    color: #0000ff; /* Set text color to blue */
+}
+
+.min-width-card {
+  min-width: 250px;
+}
