@@ -31,7 +31,8 @@ const Registration = () => {
     // Hook to programmatically navigate pages
     const navigate = useNavigate();
 
-    const URL = 'http://localhost:9000/register/verify';
+    // Dynamically set the API endpoint using the environment variable for backend URL
+    const URL = `${process.env.REACT_APP_API_URL}/register/verify`;
 
     // Toggle visibility of password input
     const togglePasswordVisibility = () => {

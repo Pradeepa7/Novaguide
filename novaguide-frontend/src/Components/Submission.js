@@ -5,23 +5,23 @@ import { useNavigate } from "react-router-dom";
 
 const Submission = () => {
 
-    const URL = 'http://localhost:9000/register/save'; // Backend API endpoint
+    // Backend API endpoint for user registration (uses env variable for flexibility between dev and production)
+    const URL = `${process.env.REACT_APP_API_URL}/register/save`;
+
     const [error, setError] = useState(''); // State to track error message
     const { completeData } = useContext(UserDetailsContext); // Access complete user data from context
     const navigate = useNavigate(); // Hook to navigate programmatically
-
-    // useEffect runs once on component mount to send registration data
+    
+    // useEffect runs once on mount to send user registration data to backend
     useEffect(() => {
-        const fullData = completeData(); // Get full user data (registration + plan)
-        console.log('full Data', fullData); // Debug: log full user data
-        fetchApi(fullData); // Call API to save data
-    }, [completeData]);
+    const fullData = completeData(); // Get full user data (registration + plan)
+    console.log('full Data', fullData); // Debug: log full user data
 
     // Function to send user data to backend API
     const fetchApi = async (fullData) => {
         try {
             const response = await axios.post(URL, fullData); // Send POST request with user data
-            const resp = await response.data; // Extract response body
+            const resp = response.data; // Extract response body
             console.log(resp); // Debug: log response data
             const respStatus = response.status; // Get HTTP status code
             console.log(respStatus); // Debug: log response status
@@ -30,11 +30,14 @@ const Submission = () => {
             if (respStatus === 200 && resp.error) {
                 setError('error');
             }
-
         } catch (e) {
             console.log('Error:', e); // Catch and log any error during request
         }
-    }
+    };
+
+    fetchApi(fullData); // Call the API after function is defined
+}, [completeData, URL]);
+
 
     // Navigate to pricing page if user has active subscription
     const handleSelectPlan = () => {
