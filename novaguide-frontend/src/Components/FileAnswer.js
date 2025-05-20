@@ -13,7 +13,7 @@ const FileAnswer = ({ answers }) => {
 
   return (
     <div
-      className="mt-4 p-4 rounded shadow"
+      className="mt-5 p-4 rounded shadow"
       ref={answerBoxRef} // Attach the ref to enable auto-scrolling
       style={{
         background: "linear-gradient(135deg, #f0f8ff, #e6f0ff)", // Light blue gradient background
