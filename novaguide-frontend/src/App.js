@@ -37,7 +37,7 @@ function App() {
 
   return (
    // Set up layout with Bootstrap classes and full viewport height
-    <div className='d-flex justify-content-center align-items-center bg-info-subtle' style={{ height: '100vh' }}>
+    <div className="container-fluid bg-info-subtle min-vh-100 d-flex flex-column justify-content-center align-items-center px-2">
 
       {/* Define application routes */}
       <Routes>

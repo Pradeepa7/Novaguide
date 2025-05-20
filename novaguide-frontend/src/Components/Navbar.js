@@ -6,7 +6,10 @@ const Navbar = () => {
   return (
     <div>
         {/* Navigation Bar */}
-            <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#63c9f9'}}>
+            <nav
+            className="navbar navbar-expand-lg fixed-top" // Bootstrap navbar with fixed position
+            style={{ backgroundColor: '#63c9f9', padding: '0.25rem 0' }} // Custom background and padding
+            >
                 <div className="container-fluid">
                     <Link className="navbar-brand d-flex align-items-center fw-semibold" to="/" style={{color:'#0000ff'}}>
                         <img src={logo} alt="NovaGuide Logo" width="30" height="28" className="d-inline-block align-text-top me-3" />
