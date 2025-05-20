@@ -28,7 +28,9 @@ const Registration = () => {
     // Context and navigation hooks
     const { saveUserRegDetails } = useContext(UserDetailsContext);
     const navigate = useNavigate();
-    const URL = 'http://localhost:7000/register/verify';
+    // Dynamically set the API endpoint using the environment variable for backend URL
+    const URL = `${process.env.REACT_APP_API_URL}/register/verify`;
+
 
     // Toggle password visibility
     const togglePasswordVisibility = () => {

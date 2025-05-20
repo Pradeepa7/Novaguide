@@ -24,7 +24,7 @@ const Home = () => {
       <Navbar />
 
       {/* Main Content Section */}
-      <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center mt-5 px-4 py-3">
+      <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center mt-5 px-4 py-3" style={{marginTop:"100px"}}>
         
         {/* Textual Welcome Section */}
         <div className="text-section mb-4 mb-md-0">

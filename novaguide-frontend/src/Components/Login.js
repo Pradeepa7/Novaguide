@@ -12,8 +12,9 @@ import { useNavigate } from "react-router-dom";
 // Define Login component
 const Login = () => {
 
-    // API endpoint URL for user login
-    const URL = 'http://localhost:7000/login/userLogin';
+    // Dynamically set the login API endpoint from environment variable (suitable for both dev and production)
+    const URL = `${process.env.REACT_APP_API_URL}/login/userLogin`;
+
     const navigate = useNavigate();
 
     // Access context to save user registration details (for pre-fill on error)
